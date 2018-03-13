@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lista de Amigos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Contactos</ion-list-header>
+    <ion-item *ngIf="afAuth.authState | async as user">
+      <ion-avatar item-start>
+        <img src={{currentUser.photoURL}}>
+    </ion-avatar>
+     {{user.displayName}}
+      
+     
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title>
+      Inicio
+      
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  padding >
+
+ 
+ <ion-list>
+    <ion-card>
+      <ion-card-header>
+      
+      </ion-card-header>
+      <ion-card-content>
+        
+          <ion-item *ngFor="let comment of comments |async" (click)="showOptions(
+            comment.id,comment.title
+          )">
+             <ion-title>
+
+             </ion-title>  
+            <ion-avatar item-start>
+                  <img src={{currentUser.photoURL}}>
+              </ion-avatar>
+          {{comment.title}}
+          
+          <ion-row>
+              <ion-col>
+                <button  ion-button (click)="likes()" clear small>
+                  <ion-icon name="thumbs-up"> </ion-icon> 
+                 <label ion-label><p> </p>{{contador}}</label> 
+                </button>  
+              </ion-col>
+              
+              <ion-col>
+                  <button ion-button (click)="dislikes()" clear small>
+                      <ion-icon name="thumbs-down"></ion-icon>
+                      <label ion-label><p> </p>{{contador1}}</label> 
+                    </button>
+              </ion-col>    
+            </ion-row>
+          </ion-item> 
+      </ion-card-content>
+
+     </ion-card> 
+  </ion-list>
+  
+  <ion-fab right bottom>
+    <button ion-fab (click)="agregarComentario()">
+      <ion-icon name="add" >
+
+      </ion-icon>
+    </button>
+
+    <button ion-fab (click)="logout()">
+        <ion-icon name="close" >
+  
+        </ion-icon>
+      </button>
+
+  </ion-fab>
+</ion-content>
