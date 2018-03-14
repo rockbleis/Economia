@@ -13,11 +13,34 @@
 </ion-header>
 
 
-<ion-content padding background-color:gray >
+<ion-content padding  >
   <div class="contenedor" style="max-width:500px;">
     <button ion-button color="danger" full (click)="login()">
       <ion-icon name="logo-googleplus"></ion-icon>
       Entrar con Google
-    </button> 
+    </button>
+    <button ion-button color="secondary" full (click)="registro()" >
+      
+      Registrar nuevo Usuario
+    </button>  
+
+    <div class="loguear" style="max-width:500px;">
+      <h1>Entrar con Correo</h1>
+      <!--Login Con Correo y Contraseña-->
+      <ion-list>
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="text" #email></ion-input>
+          </ion-item>
+      
+          <ion-item class="cajaOp">
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" #password></ion-input>
+          </ion-item>
+      </ion-list>
+    
+      <button ion-button block round color="grey" (click)="loginWithEmail()">Registrar</button>
     </div>
+    </div>
+    
 </ion-content>

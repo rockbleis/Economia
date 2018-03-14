@@ -146,7 +146,9 @@ actualizarComentario(commentId: string, commentTitle){
 }
 
 logout(){
+  firebase.auth().signOut;
   this.navCtrl.push(LoginPage);
+ 
 }
 
 
